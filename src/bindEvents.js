@@ -1,5 +1,5 @@
 import {cacheDOM} from './cacheDom.js';
-import {getData} from './getWeatherData.js';
+import {getData} from './getData.js';
 
 const cache = cacheDOM();
 
