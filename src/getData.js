@@ -1,4 +1,6 @@
 import { cacheDOM } from "./cacheDom";
+import { createCard } from "./createCard";
+import { modifyData } from "./modifyData";
 
 const cache = cacheDOM();
 
@@ -12,8 +14,10 @@ async function getData(city) {
         if (parsedData.cod === '404') {
             throw new Error
         }
+        let modifiedData = modifyData(parsedData)
         cache.cardContainer.textContent = '';
-        console.log(parsedData)
+        console.log(modifiedData)
+        cache.cardContainer.appendChild(createCard(modifiedData));
     } catch (error) {
         cache.cardContainer.textContent = `Woops! We couldn't find that city! Please try again!`;
         console.error(error);
