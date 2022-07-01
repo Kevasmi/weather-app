@@ -54,6 +54,24 @@ form {
     margin-top: 1rem;
 }
 
+#search {
+    padding: .5rem;
+    background-color: aliceblue;
+    border-radius: 5px;
+    border: none;
+}
+
+#submit {
+    font-size: 1rem;
+    font-weight: 1000;
+    height: 30px;
+    width: 30px;
+    border: 1px solid white;
+    border-radius: 50%;
+    background-color: blueviolet;
+    cursor: pointer;
+}
+
 .card-container {
     display: flex;
     justify-content: center;
@@ -64,21 +82,17 @@ form {
 }
 
 .card {
-    display: grid;
-    grid-template-areas: 
-    "city city city"
-    "temp feels-like humidity"
-    "weather weather pic"
-    "weather-desc weather-desc weather-desc"
-    ;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: .7rem;
     position: relative;
-    padding: 1rem;
-    height: 300px;
-    width: 275px;
+    padding: 1.5rem;
+    height: 350px;
+    width: 310px;
     border-radius: 7px;
-    background-color: white;
+    background-color: rgb(181, 153, 226);
     color: black;
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
@@ -88,28 +102,54 @@ form {
     top: 10px;
     right: 10px;
     background: none;
-    font-weight: 500;
+    font-weight: 700;
     border: none;
     border-bottom: 1px solid black;
     cursor: pointer;
 }
 
 .city {
-    grid-area: city;
+    text-align: center;
     font-size: 2rem;
 }
 
+.temp-container {
+    display: flex;
+    gap: .1rem;
+    justify-content: center;
+    align-items: center;
+}
+
 .temperature {
-    grid-area: temp;
-    padding: 1rem;
+    padding: .5rem;
+    font-size: 4rem;
+}
+
+.divider {
+    margin-right: .5rem;
+    height: 60px;
+    width: 0px;
+    border: 2px solid black;
+    border-radius: 5px;
 }
 
 .feels-like {
-    grid-area: feels-like;
+    font-size: 1.5rem;
 }
 
 .humidity {
-    grid-area: humidity;
+    text-align: center;
+    line-height: 2rem;
+    margin-left: .5rem;
+}
+
+.weather-container {
+    display: grid;
+    grid-template-areas: 
+    "weather pic"
+    ;
+    justify-content: center;
+    align-items: center;
 }
 
 .weather {
@@ -118,10 +158,13 @@ form {
 
 .pic {
     grid-area: pic;
+    height: 80px;
+    width: 80px;
+
 }
 
 .weather-desc {
-    grid-area: weather-desc;
+    grid-area: desc;
 }
 
 footer {
