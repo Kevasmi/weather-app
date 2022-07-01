@@ -39,7 +39,7 @@ main {
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
-    background-color: rgb(111, 118, 219);
+    background-color: rgb(78, 81, 201);
 }
 
 .form-container {
@@ -60,10 +60,69 @@ form {
     align-items: center;
     height: 400px;
     width: 1200px;
-    border: black solid 1px;
     margin-bottom: 12rem;
 }
 
+.card {
+    display: grid;
+    grid-template-areas: 
+    "city city city"
+    "temp feels-like humidity"
+    "weather weather pic"
+    "weather-desc weather-desc weather-desc"
+    ;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 1rem;
+    height: 300px;
+    width: 275px;
+    border-radius: 7px;
+    background-color: white;
+    color: black;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.card > button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    font-weight: 500;
+    border: none;
+    border-bottom: 1px solid black;
+    cursor: pointer;
+}
+
+.city {
+    grid-area: city;
+    font-size: 2rem;
+}
+
+.temperature {
+    grid-area: temp;
+    padding: 1rem;
+}
+
+.feels-like {
+    grid-area: feels-like;
+}
+
+.humidity {
+    grid-area: humidity;
+}
+
+.weather {
+    grid-area: weather;
+}
+
+.pic {
+    grid-area: pic;
+}
+
+.weather-desc {
+    grid-area: weather-desc;
+}
 
 footer {
     grid-area: footer;
